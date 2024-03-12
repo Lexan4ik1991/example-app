@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +34,4 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
 Auth::routes();
 
-Route::post('/logout', [TaskController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');
